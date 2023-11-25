@@ -1,11 +1,12 @@
 import { NavBar } from "./pages/NavBar"
 import { useHash } from "./hooks/useHash"
 import { Home } from "./pages/Home"
+import { Post } from "./pages/Post"
 
 function App() {
 
-  const [page, params] = useHash()
-  const content = getContent(page)
+  const [page, id] = useHash()
+  const content = getContent(page, id)
 
   return (
     <div className="container">
@@ -16,7 +17,7 @@ function App() {
 
 }
 
-function getContent(page) {
+function getContent(page, id) {
 
 
   switch (page) {
@@ -24,6 +25,8 @@ function getContent(page) {
       return <Home />
     case 'contact':
       return 'contact'
+    case 'post':
+      return <Post id={id} />
     default:
       return '404 not found'
   }

@@ -15,9 +15,9 @@ export  function Home() {
 			{data.map((post) => (
 				<div key={post.id}>
 				<Card
-					id={post.id}
 					title={post.title}
 					body={post.body}
+					href={`#post:${post.id}`}
 					image={"https://fastly.picsum.photos/id/731/200/200.jpg?hmac=f28-4BBT0mjsAystSYFss8hXUcYGvzvo054jqaZG4i0"}
 				/>
 				</div>
